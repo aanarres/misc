@@ -3,7 +3,7 @@
 
 // Just for fun... type of NaN?
 console.log ("NaN is a ..." + typeof(NaN));
-console.log (typeof(NaN) === "number");
+console.log ("typeof(NaN) === \"number\": " + (typeof(NaN) === "number"));
 
 // equality and identity
 console.log ("Equality with itself NaN == NaN " + (NaN == NaN));
