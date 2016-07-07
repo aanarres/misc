@@ -65,3 +65,26 @@ innerVar = anInner
 globalVar = Evil
 */
 
+/**
+ * Test #3
+ * what will be the result of running the following code?
+*/
+for (var i = 0; i < 5; i++) {
+  setTimeout(function() { console.log(i); }, i * 1000 );
+}
+
+/*
+Result: of course 5 all the way. When the anonymous function is executed,
+i has long become 5.
+*/
+
+// Alternative code that will display 0, 1, 2, 3, 4:
+
+for (var i = 0; i < 5; i++) {
+	(function(x) {
+    	setTimeout(function() { console.log(x); }, x * 1000 );
+    })(i);
+}
+
+// What happens here is that the closure is executed as the code runs, with i=0 being sent in x, then timeout is set for a function() { console.log(1); }
+
