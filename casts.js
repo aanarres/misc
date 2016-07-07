@@ -10,3 +10,20 @@ console.log(+"1" +  "1" + "2"); // 112
 console.log( "A" - "B" + "2"); // NaN2 no implicit cast to number for a letter
 console.log( "A" - "B" + 2); // NaN
 
+/**
+ * Test #2
+ * Set objects as properties of an object, and you may be surprised:
+*/
+
+var a={},
+    b={key:'b'},
+    c={key:'c'};
+
+a[b]=1; // a["[object Object]"] = 1 ouch
+a[c]=2; // a["[object Object]"] = 2
+
+console.log(a[b]);
+
+/*
+ Will display: 2
+*/
