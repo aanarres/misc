@@ -9,7 +9,7 @@ function query() {
     
   // Traverses up the dom stack trying to find a match of a specific class
   function up_to(node, klass) {
-    if (node.className === klass) {
+    if (node.classList.contains(klass)) {
       return node;
     } 
     if(node === document.body) {
